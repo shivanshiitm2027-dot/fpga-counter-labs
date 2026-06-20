@@ -58,5 +58,102 @@ Some suggestions for seeing timing failures:
 - Find the maximum operating speed of an adder
 - Implement a multiplier using the parallel array multiplier or Booth multiplier approaches (remember it must be combinational)
 - Implement a function like `a*a + b*b` and see at what frequency it fails.
+- # FPGA Speed Testing Framework using PYNQ
+
+## Overview
+
+This project implements an FPGA-based speed testing framework for measuring the maximum operating frequency of combinational RTL circuits.
+
+The design uses a Zynq Processing System, AXI infrastructure, and programmable clock control to evaluate timing performance on FPGA hardware.
+
+## Objective
+
+Determine the maximum clock frequency at which a combinational circuit can operate correctly.
+
+The current DUT (Device Under Test) is a 32-bit multiplier implemented in Verilog.
+
+## Design Flow
+
+Input Registers
+      ↓
+Combinational DUT (mult.v)
+      ↓
+Output Registers
+      ↓
+AXI Interface
+      ↓
+PYNQ Software Framework
+      ↓
+Clock Frequency Sweep
+
+## Features
+
+- 32-bit combinational multiplier
+- Vivado IP Integrator design
+- AXI-Lite control interface
+- AXI FIFO integration
+- Timing analysis
+- FPGA implementation
+- Bitstream generation
+- PYNQ software-based clock control
+
+## Tools
+
+- Verilog HDL
+- Xilinx Vivado 2025.1
+- TCL Scripting
+- PYNQ Framework
+- Jupyter Notebook
+
+## Implementation Results
+
+| Metric | Result |
+|----------|----------|
+| Synthesis | Passed |
+| Implementation | Passed |
+| Bitstream Generation | Passed |
+| Timing Closure | Passed |
+| WNS | 5.332 ns |
+
+## Files
+
+- mult.v
+- proj.tcl
+- speed_test.bit
+- speed_test.hwh
+- mult_speed.ipynb
+
+## Current Status
+
+✔ RTL integrated
+
+✔ Vivado project completed
+
+✔ Timing analysis completed
+
+✔ Bitstream generated
+
+✔ Hardware export completed
+
+⏳ PYNQ board validation pending
+
+## Skills Demonstrated
+
+- FPGA Design
+- RTL Design
+- Verilog
+- Timing Analysis
+- Vivado IP Integrator
+- TCL Automation
+- FPGA Verification
+- Hardware/Software Co-Design
+
+## Author
+
+Shivanshu Yadav
+
+BS Electronic Systems Engineering
+
+Indian Institute of Technology Madras
 
 
