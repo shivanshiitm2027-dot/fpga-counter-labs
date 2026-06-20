@@ -12,6 +12,46 @@ FPGAs are programmed using a configuration file, which is a binary file that con
 
 The instructions below (*How to run*) show what needs to be done to generate the bit file.  If you have a Linux based system with Xilinx Vivado software installed, then just running `make` in the `scripts` folder should create the file.  If you are working on a Windows based system, you can still use the scripts, but may need to open a command terminal to type in the commands.
 
+## My Implementation Results
+
+### Environment
+
+* Tool: Xilinx Vivado 2025.1
+* FPGA Clock: 125 MHz (8 ns period)
+
+### Synthesis and Implementation
+
+* Synthesis: Completed Successfully
+* Implementation: Completed Successfully
+* Bitstream Generation: Completed Successfully
+
+### Timing Results
+
+* WNS (Worst Negative Slack): 2.433 ns
+* TNS (Total Negative Slack): 0.000 ns
+* WHS: 0.022 ns
+* THS: 0.000 ns
+
+### Estimated Maximum Frequency
+
+Critical Path Delay = 8.000 ns - 2.433 ns = 5.567 ns
+
+Estimated Fmax:
+
+Fmax ≈ 1 / 5.567 ns ≈ 179.6 MHz
+
+### Power
+
+* Total On-Chip Power: 0.118 W
+
+### Observations
+
+* Timing constraints were met successfully.
+* No failed routes were reported.
+* Bitstream was generated successfully and the design is ready for FPGA deployment.
+
+
+
 ### JTAG
 
 The bit file is loaded into the FPGA using a *JTAG* cable.  JTAG is normally used for testing digital circuits - however, here we can also use it for directly programming the FPGA.  This requires direct access to the computer where the FPGA is connected, and so cannot be done in remote mode.
