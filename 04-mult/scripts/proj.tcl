@@ -99,24 +99,17 @@ proc create_proj { } {
       -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
 
     # Create ports
+# Create instance: axi_fifo_mm_s_0, and set properties
+set axi_fifo_mm_s_0 [ \
+  create_bd_cell -type ip \
+  -vlnv xilinx.com:ip:axi_fifo_mm_s:4.3 axi_fifo_mm_s_0 ]
 
-    # Create instance: axi_fifo_mm_s_0, and set properties
-    set axi_fifo_mm_s_0 [ \
-      create_bd_cell -type ip \
-      -vlnv xilinx.com:ip:axi_fifo_mm_s:4.2 axi_fifo_mm_s_0 ]
-    set_property -dict [ list \
-      CONFIG.C_USE_TX_CTRL {0} \
-      ] $axi_fifo_mm_s_0
+set_property -dict [ list \
+  CONFIG.C_USE_TX_CTRL {0} \
+  ] $axi_fifo_mm_s_0
+   
 
-    # Create instance: axis_data_fifo_0, and set properties
-    set axis_data_fifo_0 [ \
-      create_bd_cell -type ip \
-      -vlnv xilinx.com:ip:axis_data_fifo:2.0 axis_data_fifo_0 ]
-    set_property -dict [ list \
-      CONFIG.HAS_TLAST {1} \
-      CONFIG.IS_ACLK_ASYNC {1} \
-      CONFIG.TDATA_NUM_BYTES {8} \
-      ] $axis_data_fifo_0
+
 
     # Create instance: axis_data_fifo_1, and set properties
     set axis_data_fifo_1 [ \
